@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Admin Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #eef2f7, #d4e0ec);
+        }
+
+        .form-container {
+            background: linear-gradient(135deg, #ffffff, #f8fbff);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #9ca3af;
+        }
+
+        .input-group .form-input:focus + .input-icon {
+            color: #3b82f6;
+        }
+
+        .form-header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .form-footer {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .form-footer a {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <div class="form-container w-full max-w-lg rounded-lg overflow-hidden">
+        <div class="form-header">
+            <h2 class="text-3xl font-bold">Hospital Admin Signup</h2>
+        </div>
+        <form id="signupForm" class="p-8 space-y-6">
+            <div class="input-group relative">
+                <input 
+                    type="text" 
+                    id="fullName" 
+                    placeholder="Full Name" 
+                    required
+                    class="form-input w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none"
+                />
+                <i class="fas fa-user input-icon"></i>
+            </div>
+
+            <div class="input-group relative">
+                <input 
+                    type="tel" 
+                    id="phoneNumber" 
+                    placeholder="Phone Number" 
+                    required
+                    pattern="[0-9]{10}"
+                    class="form-input w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none"
+                />
+                <i class="fas fa-phone input-icon"></i>
+            </div>
+
+            <div class="input-group relative">
+                <input 
+                    type="email" 
+                    id="emailAddress" 
+                    placeholder="Email Address" 
+                    required
+                    class="form-input w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none"
+                />
+                <i class="fas fa-envelope input-icon"></i>
+            </div>
+
+            <div class="flex space-x-4">
+                <div class="input-group relative w-1/2">
+                    <select 
+                        id="stateSelect" 
+                        required
+                        class="form-input w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none">
+                        <option value="">Select State</option>
+                    </select>
+                    <i class="fas fa-map-marker-alt input-icon"></i>
+                </div>
+                <div class="input-group relative w-1/2">
+                    <select 
+                        id="citySelect" 
+                        required
+                        class="form-input w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none">
+                        <option value="">Select City</option>
+                    </select>
+                    <i class="fas fa-city input-icon"></i>
+                </div>
+            </div>
+
+            <div class="input-group relative">
+                <input 
+                    type="text" 
+                    id="hospitalName" 
+                    placeholder="Hospital Name" 
+                    required
+                    class="form-input w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none"
+                />
+                <i class="fas fa-hospital input-icon"></i>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 font-semibold">
+                    Ayushman Card Assured?
+                </label>
+                <div class="flex space-x-4 mt-2">
+                    <label class="inline-flex items-center">
+                        <input 
+                            type="radio" 
+                            name="ayushmanAssured" 
+                            value="yes" 
+                            class="form-radio text-blue-500"
+                        />
+                        <span class="ml-2">Yes</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input 
+                            type="radio" 
+                            name="ayushmanAssured" 
+                            value="no" 
+                            class="form-radio text-blue-500"
+                        />
+                        <span class="ml-2">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <button 
+                type="submit" 
+                class="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none"
+            >
+                Sign Up
+            </button>
+            <div class="form-footer">
+                Already have an account? <a href="#">Login here</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code remains unchanged for the dropdown and validation
+    </script>
+</body>
+</html>
